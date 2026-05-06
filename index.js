@@ -24,7 +24,7 @@ for(a=1; a<=systemsQuantity; a++){
       willAdd = true //why is this not being repeated
       const target = document.getElementById("searchTarget")
       for (const child of target.children){
-        if(child.value = locationDATA[a][b].Resources[c]){
+        if(child.value == locationDATA[a][b].Resources[c]){
           willAdd = false
           break
         }
