@@ -1,6 +1,6 @@
 async function loadJson() {
   try {
-    const response = await fetch('location_data.JSON');
+    const response = await fetch('location_data.json');
     
     // Check if request was successful
     if (!response.ok) {
