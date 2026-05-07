@@ -3,8 +3,8 @@ locationDATA = {
         "Name": "Sawma I",
         "Sector": "Terminus",
         "Type": "Planet",
-        "Resources": ["Unexplored"],
-        "Deposits": ["Unexplored"]
+        "Resources": ["Brassy Outcrop", "Bauxite Rock", "White Feldspar Mound", "Cupric Stone", "Sandstone Mound", "???", "Ferric Stone", "Ferrous Outcrop"],
+        "Deposits": ["???", "???"]
     },
     {
         "Name": "Sawma II",
@@ -45,7 +45,7 @@ locationDATA = {
         "Name": "Vellax Omega II",
         "Sector": "Terminus",
         "Type": "Planet",
-        "Resources": ["Sandstone Mound", "Brassy Outcrop", "Cupric Stone", "???", "Basalt Shell", "???", "???"],
+        "Resources": ["Sandstone Mound", "Brassy Outcrop", "Cupric Stone", "Malachite", "Basalt Shell", "Azurite", "???"],
         "Deposits": ["Iron", "Copper"]
     },
     {
