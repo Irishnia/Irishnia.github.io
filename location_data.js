@@ -25,7 +25,7 @@ locationDATA = {
         "Sector": "Terminus",
         "Type": "Planet",
         "Resources": ["Bauxite Rock", "White Feldspar Mound", "Sandstone Mound", "???", "???", "Cupric Stone", "Ferric Stone", "???", "Brassy Outcrop", "???"],
-        "Deposits": ["None"]
+        "Deposits": ["none"]
     },
     {
         "Name": "Sawma V",

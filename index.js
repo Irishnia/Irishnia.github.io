@@ -1,5 +1,6 @@
 const searchTarget = document.getElementById("searchTarget");
-const startSearch = document.getElementById("startSearch");
+const startReourceSearch = document.getElementById("startResourceSearch");
+const startDepositSearch = document.getElementById("startDepositSearch");
 const searchResult = document.getElementById("searchResult");
 
 //Populate Static Information
@@ -13,7 +14,7 @@ for(a=1; a<=systemsQuantity; a++){
   for(b=0; b<locationDATA[a].length; b++){
     for(c=0; c<locationDATA[a][b].Resources.length; c++){
       willAdd = true //why is this not being repeated
-      const target = document.getElementById("searchTarget")
+      const target = document.getElementById("resourceSearchTarget")
       for (const child of target.children){
         if(child.value == locationDATA[a][b].Resources[c]){
           willAdd = false
@@ -34,16 +35,61 @@ for(a=1; a<=systemsQuantity; a++){
   }
   }
 }
+for(a=1; a<=systemsQuantity; a++){
+  for(b=0; b<locationDATA[a].length; b++){
+    for(c=0; c<locationDATA[a][b].Deposits.length; c++){
+      willAdd = true //why is this not being repeated
+      const target = document.getElementById("depositSearchTarget")
+      for (const child of target.children){
+        if(child.value == locationDATA[a][b].Deposits[c]){
+          willAdd = false
+          break
+        }
+      }
+      if(willAdd){
+        opt = document.createElement('option');
+        opt.value = locationDATA[a][b].Deposits[c];
+        opt.innerHTML = locationDATA[a][b].Deposits[c];
+        target.appendChild(opt);
+      //console.log("added resource " + locationDATA[a][b].Resources[c]);
+    }else{
+      willAdd = true; //why is this being skipped?
+      //console.log(locationDATA[a][b].Resources[c] + " is already an option")
+    }
+   //console.log(locationDATA[a][b].Resources[c])
+  }
+  }
+}
 
 //Surface level search of how many planets Match
-startSearch.addEventListener("click", function(){
+startResourceSearch.addEventListener("click", function(){
   let planetCount = 0
   const area = document.getElementById("resultHolder")
   area.innerHTML = '';
   for(a=1; a<=systemsQuantity; a++){
   for(b=0; b<locationDATA[a].length; b++){
     for(c=0; c<locationDATA[a][b].Resources.length; c++){
-      if(searchTarget.value == locationDATA[a][b].Resources[c]){
+      if(resourceSearchTarget.value == locationDATA[a][b].Resources[c]){
+        planetCount++;
+        result = document.createElement('p')
+        result.id = "result"
+        result.innerHTML = locationDATA[a][b].Name;
+        area.appendChild(result);
+        break;
+      }
+  }
+  }
+}
+searchResult.textContent = "There are " + planetCount + " planets that contain your search."
+})
+startDepositSearch.addEventListener("click", function(){
+  let planetCount = 0
+  const area = document.getElementById("resultHolder")
+  area.innerHTML = '';
+  for(a=1; a<=systemsQuantity; a++){
+  for(b=0; b<locationDATA[a].length; b++){
+    for(c=0; c<locationDATA[a][b].Deposits.length; c++){
+      if(depositSearchTarget.value == locationDATA[a][b].Deposits[c]){
         planetCount++;
         result = document.createElement('p')
         result.id = "result"
