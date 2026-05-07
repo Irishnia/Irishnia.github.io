@@ -1,0 +1,17 @@
+#System{
+    color: red;
+    float: left;
+    margin-right: 20px;
+}
+.Sector{
+    width: 50%;
+    float: left;
+    background-color: brown;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+#result{
+    color: blue;
+    float: left;
+    margin-right: 20px;
+}

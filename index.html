@@ -2,15 +2,30 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="utf-8" />
     <title>Spacecraft Tool Box</title>
 </head>
 <body>
-<select name="Resource" id="searchTarget">
-
-</select>
+    <p>Current Available Data</p>
+<div id="Terminus" class="Sector">
+    <p>Terminus Systems</p>
+</div>
+<div id="Threshold" class="Sector">
+    <p>Threshold Systems</p>
+</div>
+<div id="Cairn" class="Sector">
+    <p>Cairn Systems</p>
+</div>
+<div>
+<select name="Resource" id="searchTarget"></select>
 <button id="startSearch">Search</button>
 <p id="searchResult">There are 0 planets that contain your search</p>
+<div>
+    <p>Results</p>
+    <div id="resultHolder"></div>
+</div>
+</div>
 <script src="location_data.js"></script>
 <script src="index.js"></script>
 </body>

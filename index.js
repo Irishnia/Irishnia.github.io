@@ -2,9 +2,14 @@ const searchTarget = document.getElementById("searchTarget");
 const startSearch = document.getElementById("startSearch");
 const searchResult = document.getElementById("searchResult");
 
-//Populate Selection with Options
+//Populate Static Information
 systemsQuantity = 16;
 for(a=1; a<=systemsQuantity; a++){
+  const currentSector = document.getElementById(locationDATA[a][0].Sector);
+  system = document.createElement('p');
+  system.id = "System";
+  system.innerHTML = locationDATA[a][0].Name.slice(0, -2)
+  currentSector.appendChild(system);
   for(b=0; b<locationDATA[a].length; b++){
     for(c=0; c<locationDATA[a][b].Resources.length; c++){
       willAdd = true //why is this not being repeated
@@ -30,13 +35,20 @@ for(a=1; a<=systemsQuantity; a++){
   }
 }
 
+//Surface level search of how many planets Match
 startSearch.addEventListener("click", function(){
   let planetCount = 0
+  const area = document.getElementById("resultHolder")
+  area.innerHTML = '';
   for(a=1; a<=systemsQuantity; a++){
   for(b=0; b<locationDATA[a].length; b++){
     for(c=0; c<locationDATA[a][b].Resources.length; c++){
       if(searchTarget.value == locationDATA[a][b].Resources[c]){
         planetCount++;
+        result = document.createElement('p')
+        result.id = "result"
+        result.innerHTML = locationDATA[a][b].Name;
+        area.appendChild(result);
         break;
       }
   }
