@@ -1,5 +1,5 @@
 const searchTarget = document.getElementById("searchTarget");
-const startReourceSearch = document.getElementById("startResourceSearch");
+const startResourceSearch = document.getElementById("startResourceSearch");
 const startDepositSearch = document.getElementById("startDepositSearch");
 const searchResult = document.getElementById("searchResult");
 
