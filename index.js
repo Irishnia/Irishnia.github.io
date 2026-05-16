@@ -10,7 +10,7 @@ for(a=1; a<=systemsQuantity; a++){
   system = document.createElement('p');
   system.id = "System";
   system.innerHTML = locationDATA[a][0].Name.slice(0, -2)
-  currentSector.appendChild(system);
+  currentSector.querySelector('.sector-body').appendChild(system);
   for(b=0; b<locationDATA[a].length; b++){
     for(c=0; c<locationDATA[a][b].Resources.length; c++){
       willAdd = true
@@ -82,6 +82,18 @@ startResourceSearch.addEventListener("click", function(){
 }
 searchResult.textContent = "There are " + planetCount + " planets that contain your search."
 })
+
+// Collapsible sector panels
+const sectorToggles = document.querySelectorAll('.sector-toggle');
+sectorToggles.forEach(function(toggle){
+  toggle.addEventListener('click', function(){
+    const sector = toggle.closest('.Sector');
+    const isCollapsed = sector.classList.toggle('collapsed');
+    toggle.textContent = isCollapsed ? 'Show' : 'Hide';
+    toggle.setAttribute('aria-expanded', String(!isCollapsed));
+  });
+});
+
 startDepositSearch.addEventListener("click", function(){
   let planetCount = 0
   const area = document.getElementById("resultHolder")
