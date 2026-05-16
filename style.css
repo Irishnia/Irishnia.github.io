@@ -54,13 +54,23 @@ div {
     position: relative;
 }
 
+.sector-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
 .Sector {
-    width: calc(45% - 18px);
-    min-height: 110px;
+    flex: 1 1 calc(50% - 16px);
+    min-width: 260px;
+    max-width: calc(50vw - 32px);
+    height: auto;
     display: inline-flex;
-    align-items: flex-end;
-    justify-content: center;
-    margin: 8px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
     padding: 16px;
     background: linear-gradient(135deg, rgba(255, 47, 58, 0.14), rgba(10, 8, 16, 0.95));
     border: 1px solid var(--panel-border);
@@ -68,6 +78,7 @@ div {
     box-shadow: 0 0 32px rgba(255, 47, 58, 0.08);
     color: #ffffff;
     backdrop-filter: blur(10px);
+    box-sizing: border-box;
 }
 
 .Sector p {
