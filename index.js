@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const resourceSearchTarget = document.getElementById("resourceSearchTarget");
   const depositSearchTarget = document.getElementById("depositSearchTarget");
 
-  const systemsQuantity = 16;
+  const systemsQuantity = 3;
   for (let a = 1; a <= systemsQuantity; a++) {
     const currentSector = document.getElementById(locationDATA[a][0].Sector);
     if (!currentSector) {
