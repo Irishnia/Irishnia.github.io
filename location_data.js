@@ -3,21 +3,21 @@ locationDATA = {
         "Name": "Janus I",
         "Sector": "Threshold",
         "Type":"Planet",
-        "Resources":["Coal Clump", "Siderite", "Sandstone Mound", "Gray Quartz"],
+        "Resources":["Ferric Stone", "Ferrous Outcrop", "Siderite", "Sandstone Mound", "Gray Quartz"],
         "Deposits":["none"]
     },
 {
         "Name": "Janus II",
         "Sector": "Threshold",
         "Type":"Planet",
-        "Resources":["Brassy Outcrop", "Cupric Stone", "Sandstone Mound", "Gray Quartz"],
+        "Resources":["Ferric Stone", "Ferrous Outcrop", "Siderite", "Sandstone Mound", "Gray Quartz"],
         "Deposits":["none"]
     },
 {
         "Name": "Janus III",
         "Sector": "Threshold",
         "Type":"Planet",
-        "Resources":["Brassy Outcrop", "Cupric Stone", "Coal Clump", "Chaclopyrite", "Chalcocite"],
+        "Resources":["Ferric Stone", "Ferrous Outcrop", "Siderite", "Sandstone Mound", "Gray Quartz"],
         "Deposits":["none"]
     }],
     "2": [{
