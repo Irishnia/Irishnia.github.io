@@ -55,7 +55,7 @@ div {
 }
 
 .Sector {
-    width: calc(33.333% - 18px);
+    width: calc(45% - 18px);
     min-height: 110px;
     display: inline-flex;
     align-items: flex-end;
@@ -71,7 +71,7 @@ div {
 }
 
 .Sector p {
-    margin: 10px;
+    margin: 5px;
     font-size: 0.95rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
