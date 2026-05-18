@@ -203,14 +203,14 @@ locationDATA = {
         "Deposits": ["none"]
 }],
     "9": [{
-        "Name": "Sector Unexplored in current wipe I",
+        "Name": "Terminus Unexplored in current wipe I",
         "Sector": "Terminus",
         "Type": "Planet",
         "Resources": ["Unexplored"],
         "Deposits": ["Unexplored"]
     }],
     "10":[{
-        "Name": "Sector Unexplored in current wipe I",
+        "Name": "Cairn Unexplored in current wipe I",
         "Sector": "Cairn",
         "Type":"Planet",
         "Resources":["Unexplored"],
