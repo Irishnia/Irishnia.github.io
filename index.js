@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
   const startResourceSearch = document.getElementById("startResourceSearch");
   const startDepositSearch = document.getElementById("startDepositSearch");
+  const startSystemSearch = document.getElementById("startSystemSearch");
   const searchResult = document.getElementById("searchResult");
   const resourceSearchTarget = document.getElementById("resourceSearchTarget");
   const depositSearchTarget = document.getElementById("depositSearchTarget");
+  const systemSearchTarget = document.getElementById("systemSearchTarget");
 
   const systemsQuantity = 10;
   for (let a = 1; a <= systemsQuantity; a++) {
@@ -36,6 +38,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
     }
+  }
+
+  for (let a = 1; a <= systemsQuantity; a++) {
+          const opt = document.createElement('option');
+          opt.value = locationDATA[a][0].Name.slice(0, -2);
+          opt.innerHTML = locationDATA[a][0].Name.slice(0, -2);
+          systemSearchTarget.appendChild(opt);    
   }
 
   for (let a = 1; a <= systemsQuantity; a++) {
@@ -103,6 +112,39 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     searchResult.textContent = "There are " + planetCount + " planets that contain your search.";
+  });
+
+  startSystemSearch.addEventListener("click", function() {
+    let planetCount = 0;
+    let resourceCount = 0
+    const area = document.getElementById("resultHolder");
+    area.innerHTML = '';
+
+    for (let a = 1; a <= systemsQuantity; a++) {
+      if(locationDATA[a][0].Name.slice(0, -2) == systemSearchTarget.value){
+        planetCount = locationDATA[a].length
+        for(let b = 0; b < locationDATA[a].length; b++){
+          for(let c = 0; c < locationDATA[a][b].Resources.length; c++){
+            resourceCount++
+                const result = document.createElement('p');
+                result.id = "result";
+                result.innerHTML = locationDATA[a][b].Resources[c];
+                area.appendChild(result);
+          }
+        }
+      }
+    }
+    for(let i = 0; i < area.children.length; i++){
+      for(let o = 0; o < area.children.length; o++){
+        if(i != o){
+          if(area.children[i].innerHTML == area.children[o].innerHTML){
+            area.removeChild(area.children[o])
+          }
+        }
+      }
+    }
+    resourceCount = area.children.length
+    searchResult.textContent = "There are " + planetCount + " planets in target system with " + resourceCount + " different resources.";
   });
 
   document.addEventListener('click', function(event) {
